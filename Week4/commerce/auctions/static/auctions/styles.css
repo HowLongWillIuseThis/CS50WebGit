@@ -1,0 +1,70 @@
+body {
+    padding: 10px;
+}
+
+#create_listing
+{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#CreateForm
+{
+    text-align: center;
+}
+
+#CreateForm *{
+    margin: 10px;
+}
+
+#listings {
+    text-align: center;
+    display: block;
+    width: 200px;
+    height: 200px;
+    border: lightgrey solid;
+    margin: 20px;
+    float: left;
+}
+
+#listings img {
+    margin:10px;
+    max-height:50%;
+    max-width:50%
+}
+
+#hello{
+    position: absolute;
+    left: 25%;
+}
+
+#hello *{
+    vertical-align: top;
+    margin: 10px;
+}
+
+#hello img {
+    max-height:50%;
+    max-width:50%
+}
+
+#watchlist-button button{
+    background-color: white;
+    color: rgb(31, 207, 31);
+    border-color: rgba(50, 205, 50, 0.445);
+    border: 2px solid;
+    border-radius: 10%;
+    margin: 5px;
+}
+
+#watchlist-button button:hover{
+    color: white;
+    background-color: rgb(31, 207, 31);
+}
+
+#watchlist_success{
+    border:2px solid rgb(15, 209, 73);
+    color:black;
+    width: 10%;
+}

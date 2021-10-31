@@ -1,0 +1,26 @@
+{% extends 'auctions/layout.html' %}
+{% load static %}
+
+{% block title %}
+    Create
+{% endblock %}
+
+{% block body %}
+
+    <div id="create_listing">
+        Create a Listing
+    </div>
+
+    <div id="CreateForm">
+        <form action="{% url 'index' %}" method="POST">
+            {% csrf_token %}
+            {{ CreateForm.name.label }}: {{CreateForm.name }}<br/>
+            {{ CreateForm.category.label }}:{{ CreateForm.category }}<br/>
+            {{ CreateForm.image_url.label }}: {{ CreateForm.image_url }} {{ CreateForm.price.label }}: {{ CreateForm.price }}<br/>
+            {{ CreateForm.description.label }}:<br/>
+            {{ CreateForm.description }}<br/>
+            <input type="submit">
+        </form>
+    </div>
+
+{% endblock %}

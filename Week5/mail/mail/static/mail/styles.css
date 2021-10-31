@@ -1,0 +1,29 @@
+textarea {
+    min-height: 400px;
+}
+
+.email
+{
+    border: solid black;
+
+}
+
+#email_detail
+{
+    white-space: pre-wrap;
+}
+
+#reply_button
+{
+    float:right;
+    background-color:lightskyblue;
+    color:white;
+    border-radius: 5px;
+    border-color:lightskyblue;
+}
+
+#reply_button:hover
+{
+    color:lightskyblue;
+    background-color:white;
+}

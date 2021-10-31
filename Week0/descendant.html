@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Descendant</title>
+        <style>
+            /* this will make all children of the list item blue(bulleted list in list item)*/
+            /* the greater than or > means immediate children*/
+            ul > li
+            {
+                color:blue;
+            }
+            /* this means this is a general selector also works selects all descendant elements*/
+            /* this will also select grandchildren elements if there elements beneath children*/
+            ul li
+            {
+                color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <ol>
+            <li>list item one</li>
+            <li>list item two</li>
+                <ul>
+                    <li>sublist item one</li>
+                    <li>sublist item two</li>
+                </ul>
+            <li>list item three</li>
+        </ol>
+    </body>
+</html>

@@ -1,0 +1,26 @@
+{% extends 'auctions/layout.html' %}
+
+{% block title %}
+    {{ user.username }}
+{% endblock %}
+
+{% block body %}
+    <h2>My Listings</h2>
+    {% for listing in my_listing %}
+        <div id="listings">
+            <img src="{{ listing.image_url }}" alt="{{ listing.name }}">
+            <p>{{ listing.name }}</p>
+            <p>Starting: ${{ listing.price }} <a href="{% url 'end' item_id=listing.id %}">End Bid</a></p>
+        </div>
+    {% endfor %}
+    <div style="clear:both;">
+        <h2>My Watchlist</h2>
+        {% for items in watchlist %}
+        <div id="listings">
+            <img src="{{ items.image_url }}" alt="{{ items.name }}">
+            <p>{{ items.name }}</p>
+            <p>Starting: ${{ items.price }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

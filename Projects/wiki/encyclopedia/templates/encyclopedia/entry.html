@@ -1,0 +1,10 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ entries }}
+{% endblock %}
+
+{% block body %}
+    {{ page|safe }}
+    <a href="/wiki/{{ entries }}/change">Change This Page</a>
+{% endblock %}

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Animate</title>
+    </head>
+    <style>
+        @keyframes grow-move
+        {
+            0%
+            {
+                left: 0%;
+                font-size: 20px;
+            }
+            50%
+            {
+                left: 50%;
+                font-size: 100px;
+            }
+            100%
+            {
+                left:0%;
+                font-size: 20px;
+            }
+        }
+        h1
+        {
+            position: relative;
+            animation-name: grow-move;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function()
+        {
+            const h1 = document.querySelector('h1');
+            h1.style.animationPlayState = 'paused';
+
+            document.querySelector('button').onclick = () =>
+            {
+                if(h1.style.animationPlayState === 'paused')
+                {
+                    h1.style.animationPlayState = 'running';
+                }
+                else
+                {
+                    h1.style.animationPlayState = 'paused';
+                }
+            }
+        })
+    </script>
+    <body>
+        <button>Click Here</button>
+        <h1>Welcome!</h1>
+    </body>
+</html>

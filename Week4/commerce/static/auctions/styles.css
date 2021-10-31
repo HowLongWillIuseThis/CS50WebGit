@@ -1,0 +1,10 @@
+body {
+    padding: 10px;
+}
+
+#create_listing
+{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}

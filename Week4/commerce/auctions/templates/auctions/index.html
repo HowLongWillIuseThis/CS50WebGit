@@ -1,0 +1,14 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>Active Listings</h2>
+
+    {% for listing in listings %}
+    <!-- if item on watwchlist set background to grey -->
+    <div id="listings">
+        <img src="{{ listing.image_url }}" alt="{{ listing.name }}">
+        <p>{{ listing.name }}</p>
+        <p>Starting: ${{ listing.price }}  <a href="{% url 'bid' item_id=listing.id %}">Place Bid</a></p>
+    </div>
+    {% endfor %}
+{% endblock %}

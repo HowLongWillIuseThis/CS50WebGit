@@ -1,0 +1,31 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if watchlist_add %}
+        <div id="watchlist_success">Successfully added to watchlist</div>
+    {% endif %}
+    <div id="watchlist-button">
+        <form action="{% url 'watchlist' item_id=item_detail.id %}">
+            <button type="submit">Add to Watchlist</button>
+        </form>
+    </div>
+    {% for people in item_detail.watchlist.all %}
+        {% if user == people %}
+            <div>This item is on your watchlist</div>
+        {% endif %}
+    {% endfor %}
+    <div id="hello">
+        <h2>{{ item_detail.name }}</h2>
+        <p>Category: {{ item_detail.category }}</p>
+        <p>Bidding Price: ${{ bidding_price }}</p>
+        <img src="{{ item_detail.image_url }}" alt="{{ item_detail.name }}">
+        <span>Description: {{ item_detail.description }}</span>
+        <form action="{% url 'bid' item_id=item_detail.id %}" method="POST">
+            {% csrf_token %}
+            {{ BidForm }}
+            <input type="submit">
+        </form>
+    </div>
+
+
+{% endblock %}

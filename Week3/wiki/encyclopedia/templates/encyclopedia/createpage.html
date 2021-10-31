@@ -1,0 +1,22 @@
+{% extends 'encyclopedia/layout.html' %}
+
+{% block title %}
+    Create Page
+{% endblock %}
+
+{% block body %}
+
+    {% if title_collision == True %}
+        <div style="text-align: center; color: red;">Title of entry already exists.</div>
+    {% endif %}
+
+    <div style="text-align: center;">
+        <h3>Create Page</h3>
+        <form action="{% url 'wiki:new' %}" method="POST">
+            {% csrf_token %}
+            <p>Title: {{ createpage.Title }}</p>
+            <span style="vertical-align: top;">Text: </span>{{ createpage.Text }}<br/>
+            <input type="submit" value="Save">
+        </form>
+    </div>
+{% endblock %}

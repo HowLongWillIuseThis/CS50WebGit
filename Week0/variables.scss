@@ -1,0 +1,16 @@
+/* sass allows for the creation of variables */
+/* web browsers can't understand sass default have to convert to css via extensions*/
+/* sass also allows for user to nest css elements inside elements */
+$color: green;
+
+ul
+{
+    font-size: 14px;
+    color: $color;
+}
+
+ol
+{
+    font-size: 28px;
+    color: $color;
+}

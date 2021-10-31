@@ -1,0 +1,15 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+{{ searchinput }}
+{% endblock %}
+
+{% block body %}
+    <h1>Did You Mean?</h1>
+{% for hits in results %}
+    <a href="/wiki/{{hits}}"><li>{{hits}}</li></a>
+{% endfor %}
+{% if not results %}
+    This Page Does Not Exist.
+{% endif %}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    {{ search }}
+{% endblock %}
+
+{% block body %}
+    {% if match_found == True %}
+        {% for items in suggested %}
+            <h3><a href="{% url 'wiki:entry' title=items %}">{{ items }}</a></h3><br/>
+        {% endfor %}
+    {% else %}
+    <br/>
+        <h3>Sorry no matches were found.</h3>
+    {% endif %}
+{% endblock %}
